@@ -1,0 +1,92 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.input-container {
+    display: flex;
+    margin-bottom: 20px;
+    
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.suggestions-list {
+    margin-top: 10px;
+}
+
+.suggestion {
+    cursor: pointer;
+    padding: 5px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.suggestion:hover {
+    background-color: #e0e0e0;
+}
+
+.pokemon-list {
+    text-align: center;
+}
+
+.pokemon-list img {
+    max-width: 200px;
+    margin-bottom: 10px;
+}
+
+.todo-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.todo-list li {
+    margin-bottom: 5px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.todo-list li img {
+    max-width: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
