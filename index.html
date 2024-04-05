@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokémon To-Do List</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="container">
         <h1>Pokémon To-Do List</h1>
         <div class="input-container">
             <input type="text" id="pokemonInput" placeholder="Digite o nome do Pokémon">
-            <button onclick="searchPokemon()">Pesquisar</button>
+            <button  class="cor"  onclick="searchPokemon()">Pesquisar</button>
         </div>
         <div id="suggestionsList" class="suggestions-list"></div>
         <div id="pokemonList" class="pokemon-list"></div>
         <h2>Quero Capturar</h2>
-        <ul id="capturarList" class="todo-list"></ul>
+        <div class="espaçamento">
+            <ul id="capturarList" class="todo-list"></ul>
+        </div>
+
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

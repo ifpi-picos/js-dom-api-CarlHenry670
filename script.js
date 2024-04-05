@@ -9,7 +9,9 @@ function searchPokemon() {
     .then(response => response.json())
     .then(data => {
         const pokemonList = document.getElementById("pokemonList");
-        const pokemonImage = `<img src="${data.sprites.other["official-artwork"].front_default}" alt="${pokemonName}">`;
+        const pokemonName = data.name.charAt(0).toUpperCase() + data.name.slice(1);
+        const pokemonImage = `<img src="${data.sprites.other["official-artwork"].front_default}" alt="${pokemonName}">
+            <h2>${pokemonName}</h2>`;
         pokemonList.innerHTML = pokemonImage;
         const addButton = document.createElement("button");
         addButton.textContent = " Tenho interesse";
