@@ -28,15 +28,47 @@ function searchPokemon() {
 function addToCaptureList(pokemonName, imageUrl) {
     const captureList = document.getElementById("capturarList");
     const listItem = document.createElement("li");
-    const pokemonImage = `<img src="${imageUrl}" alt="${pokemonName}">`;
-    listItem.innerHTML = pokemonImage + pokemonName;
+    const pokemonId = pokemonName.toLowerCase().replace(/\s+/g, '-'); 
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.id = "check-" + pokemonId;
+    checkbox.classList.add("pokemon-checkbox")
+    if(localStorage.getItem(pokemonId) === "true") {
+        checkbox.checked = true;
+    }
+
+    checkbox.addEventListener("change", () => {
+        localStorage.setItem(pokemonId, checkbox.checked);
+    });
+
+    const label = document.createElement("label");
+    label.htmlFor = "check-" + pokemonId;
+    label.textContent = pokemonName;
+    label.style.marginLeft = "10px";
+
+    const pokemonImage = document.createElement("img");
+    pokemonImage.src = imageUrl;
+    pokemonImage.alt = pokemonName;
+    pokemonImage.style.maxWidth = "50px";
+    pokemonImage.style.verticalAlign = "middle";
+    pokemonImage.style.marginRight = "10px";
+    pokemonImage.style.marginLeft = "20px";
+
+    listItem.appendChild(checkbox);
+    listItem.appendChild(pokemonImage);
+    listItem.appendChild(label);
+
     const removeButton = document.createElement("button");
     removeButton.textContent = "Remover";
+    removeButton.style.marginLeft = "25px";
     removeButton.addEventListener("click", function() {
         captureList.removeChild(listItem);
+        localStorage.removeItem(pokemonId);
         saveToLocalStorage();
     });
     listItem.appendChild(removeButton);
+
     captureList.appendChild(listItem);
     saveToLocalStorage();
 }
@@ -95,7 +127,17 @@ function restoreFromLocalStorage() {
             button.addEventListener("click", function() {
                 const listItem = button.parentElement;
                 listItem.parentElement.removeChild(listItem);
+                const pokemonId = listItem.querySelector("input[type='checkbox']").id.replace("check-", "");
+                localStorage.removeItem(pokemonId);
                 saveToLocalStorage();
+            });
+        });
+
+        document.querySelectorAll("#capturarList li input[type='checkbox']").forEach(checkbox => {
+            const pokemonId = checkbox.id.replace("check-", "");
+            checkbox.checked = localStorage.getItem(pokemonId) === "true";
+            checkbox.addEventListener("change", () => {
+                localStorage.setItem(pokemonId, checkbox.checked);
             });
         });
     }

@@ -9,19 +9,24 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>Pokémon To-Do List</h1>
-        <div class="input-container">
-            <input type="text" id="pokemonInput" placeholder="Digite o nome do Pokémon">
-            <button  class="cor"  onclick="searchPokemon()">Pesquisar</button>
-        </div>
-        <div id="suggestionsList" class="suggestions-list"></div>
-        <div id="pokemonList" class="pokemon-list"></div>
-        <h2>Quero Capturar</h2>
-        <div class="espaçamento">
-            <ul id="capturarList" class="todo-list"></ul>
-        </div>
 
+    <div class="imgBack">
+        <div class="container">
+            <h1>Lista de Pokémon</h1>
+            <div class="input-container">
+                <input type="text" id="pokemonInput" placeholder="Digite o nome do Pokémon">
+                <button class="cor" onclick="searchPokemon()">Pesquisar</button>
+            </div>
+            <div id="suggestionsList" class="suggestions-list"></div>
+            <div id="pokemonList" class="pokemon-list"></div>
+        </div>
+    
+        <div class="arrumar">
+            <div class="espaçamento">
+                <h2 class="subTitle"> Quero Capturar</h2>
+                <ul id="capturarList" class="todo-list"></ul>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
