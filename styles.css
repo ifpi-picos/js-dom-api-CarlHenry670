@@ -204,6 +204,7 @@ button:hover {
         justify-content: center;
         background-size: cover;
         background-image: url("./img/44797.jpg");
+        margin-bottom: 30%;
     }
     .container {
         margin-top: 35%;
@@ -227,6 +228,7 @@ button:hover {
         justify-content: center;
         background-size: cover;
         background-image: url("./img/44797.jpg");
+        margin-bottom: 40%;
     }
     .container {
         margin-top: 35%;
@@ -251,6 +253,7 @@ button:hover {
         justify-content: center;
         background-size: cover;
         background-image: url("./img/44797.jpg");
+        margin-bottom: 70%;
     }
     .container {
         margin-top: 85%;
@@ -258,6 +261,7 @@ button:hover {
     }
     .arrumar{
         width: 85%;
+       
     }
     .todo-list {
         padding: 0;
